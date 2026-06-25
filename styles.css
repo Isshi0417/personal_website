@@ -26,3 +26,17 @@ body {
     overflow: hidden;
     position: relative;
 }
+
+.menu-item,.subtitle {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.2s ease, max-height 0.2s ease, transform 0.2s ease;
+    transform: translateY(-5px);
+}
+
+.menu-item:hover,.subtitle:hover {
+    opacity: 1;
+    max-height: 1.5rem;
+    transform: translateY(0);
+}
