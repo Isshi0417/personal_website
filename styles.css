@@ -12,7 +12,7 @@
     --font-mono: 'Special Elite', monospace;
 }
 
-*::before, *::after {
+*, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -27,7 +27,46 @@ body {
     position: relative;
 }
 
-.menu-item,.subtitle {
+.app-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 8vw;
+    gap: 1.2rem;
+}
+
+.menu-item {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    color: var(--ink-black);
+    text-decoration: none;
+    text-transform: uppercase;
+    transform: skewX(-12deg) rotate(-6deg);
+    transform-origin: left center;
+    transition: transform 0.15s ease, color 0.15s ease;
+}
+
+.menu-item:hover {
+    color: var(--atlus-red);
+    transform: skewX(-12deg) rotate(-6deg) scale(1.05);
+}
+.menu-item .subtitle {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--atlus-red);
+    margin-top: -0.2rem;
+    letter-spacing: 2px;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
@@ -35,7 +74,7 @@ body {
     transform: translateY(-5px);
 }
 
-.menu-item:hover,.subtitle:hover {
+.menu-item:hover .subtitle {
     opacity: 1;
     max-height: 1.5rem;
     transform: translateY(0);
